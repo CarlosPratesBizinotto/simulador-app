@@ -1,7 +1,13 @@
-# App de Simulação
 App Android Nativo de Simulação de Partidas.
 
-Este reposittorio foi organizados em alguns branches que representam as implementações realizadas durantes os seguintes conteúdos/videos:
+Este repositório foi organizado em algumas branches que representam as implementações realizadas:
 
-1. Desenvolvimento Mobile Nativo Para Android
-- [release/Desenvolvimento Mobile Nativo Para Android](https://github.com/CarlosPratesBizinotto/simulador-app/tree/desenvolvimento-mobile-nativo-para-android)
+1- Desenvolvimento Mobile Nativo Para Android
+
+2- Componentes, Layouts e UI/UX em Apps Android
+
+3- Consumindo informações de uma API
+
+4- Java e Kotlin Juntos! 
+
+5 - Explorando o Firebase Para Apps Android
