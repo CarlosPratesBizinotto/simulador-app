@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupMatchesList() {
         binding.rvMatches.setHasFixedSize(true);
         binding.rvMatches.setLayoutManager(new LinearLayoutManager(this));
+        binding.rvMatches.setAdapter(matchesAdapter);
         findMatchesFromApi();
     }
 
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+            // forçar um falha quando quiser, throw new RuntimeException("Teste CrashLytics"); *****************************************
         });
     }
 
