@@ -15,11 +15,11 @@ import com.example.simulador.ui.DetailActivity;
 
 import java.util.List;
 
-public class MatchesAdpter extends RecyclerView.Adapter<MatchesAdpter.ViewHolder> {
+public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHolder> {
 
     private List<Match> matches;
 
-    public MatchesAdpter(List<Match> matches) {
+    public MatchesAdapter(List<Match> matches) {
         this.matches = matches;
     }
 
@@ -31,7 +31,7 @@ public class MatchesAdpter extends RecyclerView.Adapter<MatchesAdpter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        MatchItemBinding binding = MatchItemBinding.inflate(layoutInflater, parent,false);
+        MatchItemBinding binding = MatchItemBinding.inflate(layoutInflater, parent, false);
         return new ViewHolder(binding);
     }
 
@@ -43,16 +43,13 @@ public class MatchesAdpter extends RecyclerView.Adapter<MatchesAdpter.ViewHolder
         // Adapta os dados da partida (recuperada da API) para o nosso layout.
         Glide.with(context).load(match.getHomeTeam().getImage()).circleCrop().into(holder.binding.ivHomeTeam);
         holder.binding.tvHomeTeamName.setText(match.getHomeTeam().getName());
-        holder.binding.tvHomeTeamScore.setText(match.getHomeTeam().getScore());
-        if (match.getHomeTeam().getScore() != null){
+        if (match.getHomeTeam().getScore() != null) {
             holder.binding.tvHomeTeamScore.setText(String.valueOf(match.getHomeTeam().getScore()));
         }
-
         Glide.with(context).load(match.getAwayTeam().getImage()).circleCrop().into(holder.binding.ivAwayTeam);
         holder.binding.tvAwayTeamName.setText(match.getAwayTeam().getName());
-        holder.binding.tvAwayTeamName.setText(match.getAwayTeam().getScore());
-        if (match.getAwayTeam().getScore() != null){
-            holder.binding.tvAwayTeamName.setText(String.valueOf(match.getAwayTeam().getScore()));
+        if (match.getAwayTeam().getScore() != null) {
+            holder.binding.tvAwayTeamScore.setText(String.valueOf(match.getAwayTeam().getScore()));
         }
 
         holder.itemView.setOnClickListener(view -> {
@@ -60,7 +57,6 @@ public class MatchesAdpter extends RecyclerView.Adapter<MatchesAdpter.ViewHolder
             intent.putExtra(DetailActivity.Extras.MATCH, match);
             context.startActivity(intent);
         });
-
     }
 
     @Override

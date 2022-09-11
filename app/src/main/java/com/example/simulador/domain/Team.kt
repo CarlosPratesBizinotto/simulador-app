@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Team (
+data class Team(
     @SerializedName("nome")
     val name: String,
     @SerializedName("forca")
@@ -13,4 +13,4 @@ data class Team (
     @SerializedName("imagem")
     val image: String,
     var score: Int?
-    ) : Parcelable
+) : Parcelable

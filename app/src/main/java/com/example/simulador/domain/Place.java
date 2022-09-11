@@ -7,6 +7,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class Place implements Parcelable {
 
+    public static final Creator<Place> CREATOR = new Creator<Place>() {
+        @Override
+        public Place createFromParcel(Parcel in) {
+            return new Place(in);
+        }
+
+        @Override
+        public Place[] newArray(int size) {
+            return new Place[size];
+        }
+    };
     @SerializedName("nome")
     private String name;
     @SerializedName("imagem")
@@ -27,18 +38,6 @@ public class Place implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<Place> CREATOR = new Creator<Place>() {
-        @Override
-        public Place createFromParcel(Parcel in) {
-            return new Place(in);
-        }
-
-        @Override
-        public Place[] newArray(int size) {
-            return new Place[size];
-        }
-    };
 
     public String getName() {
         return name;
